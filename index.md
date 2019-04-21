@@ -6,7 +6,7 @@ Speckle browser extension works on Chrome, Brave and Firefox. It uses ‘Web-Ext
 
 As a normal browser extension, it is made of different, but cohesive components. They include background scripts, a popup page, an options page, UI elements and various logic files. At the moment, the most logic of Speckle browser extension exists in the popup page that interacts with the background script. Browser local storage is also used to store necessary settings and encrypted keystore.
 
-
+![Dataflow](./Dataflow.png)
 
 ## Account Management
 
