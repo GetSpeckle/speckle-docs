@@ -28,6 +28,7 @@ browser.runtime.onConnect.addListener(function (port) {
         keyringVault.lock()
         port.postMessage({ method: FUNCS.LOCK, result: true })
         Break
+...        
 ```
 
 //popup service trigger message event
