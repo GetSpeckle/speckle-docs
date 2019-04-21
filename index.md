@@ -1,6 +1,6 @@
-#Speckle Development Document
+# Speckle Development Document
 
-##Overview
+## Overview
 
 Speckle browser extension works on Chrome, Brave and Firefox. It uses ‘Web-Extension Polyfill for TypeScript’ (webextension-polyfill-ts) to abstract extension API calls for different browsers.
 
@@ -8,7 +8,7 @@ As a normal browser extension, it is made of different, but cohesive components.
 
 
 
-##Account Management
+## Account Management
 
 Speckle relies on Polkadot Keyring to implement account generation, and uses browser extension  storage to implement account persistence. We adopts sr25519 as our default keyring type, as we plan to implement BIP44 HD wallet in future and ed25519 is not recommended for BIP44 HD wallet. For the same reason, we use BIP39 mnemonic as seed generation mechanism.
 
