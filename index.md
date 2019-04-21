@@ -28,7 +28,6 @@ browser.runtime.onConnect.addListener(function (port) {
         keyringVault.lock()
         port.postMessage({ method: FUNCS.LOCK, result: true })
         Break
-...
 ```
 
 //popup service trigger message event
@@ -47,7 +46,6 @@ export function lockWallet (): Promise<boolean> {
     port.postMessage({ method: FUNCS.LOCK })
   })
 }
-...
 ```
 
 // component calls service
