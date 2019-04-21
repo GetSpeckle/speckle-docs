@@ -16,3 +16,47 @@ Currently Speckle has implemented a simple wallet. Even though it will support m
 
 As Polkdadot Keyring implementation does not expose private key, Speckle does not support raw private key backup like Metamask. It only supports mnemonic backup (before account generation) and keystore backup (after account generation).
 
+### Code snippets
+
+//background listens to the port
+```
+browser.runtime.onConnect.addListener(function (port) {
+  if (port.name !== '__SPECKLE__') return
+  port.onMessage.addListener(function (msg) {
+    switch (msg.method) {
+      case FUNCS.LOCK:
+        keyringVault.lock()
+        port.postMessage({ method: FUNCS.LOCK, result: true })
+        Break
+ …
+```
+
+//popup service trigger message event
+```
+const port = browser.runtime.connect(undefined, { name: '__SPECKLE__' })
+
+export function lockWallet (): Promise<boolean> {
+  return new Promise<boolean>((resolve, reject) => {
+    port.onMessage.addListener(msg => {
+      if (msg.method !== FUNCS.LOCK) return
+      if (msg.error) {
+        reject(msg.error.message)
+      }
+      resolve(msg.result)
+    })
+    port.postMessage({ method: FUNCS.LOCK })
+  })
+}
+...
+```
+
+// component calls service
+```
+  handleLockClick = () => {
+    lockWallet().then(result => {
+      console.log(result)
+    })
+  }
+```
+
+
