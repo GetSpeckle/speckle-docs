@@ -16,6 +16,15 @@ Currently Speckle has implemented a simple wallet. Even though it will support m
 
 As Polkdadot Keyring implementation does not expose private key, Speckle does not support raw private key backup like Metamask. It only supports mnemonic backup (before account generation) and keystore backup (after account generation).
 
+### Code reading guide
+
+The code is organised by folders and the folder names describe what are inside them, e.g. components, services, etc.
+The account management service is in `/src/ts/background/services/keyring-vault.ts` file. It is responsible for mnemonic generation, account generation, keystore file generation, account persistence and account loading from storage.
+
+`src/ts/services/keyring-vault-proxy.ts` is a service proxy to `keyring-vault.ts` to hide messaging complexities from front end.
+
+`/src/ts/routes/RouteWithLayout.tsx` is a HOC (high order component) which can be used to define Routes using different Layouts. `/src/ts/layouts` contains two Layout components, `LoginLayout.tsx` is a container component which defines a common header and footer for screens before user unlocks the wallet, `DashboardLayout.tsx` is a container component which define a common header and footer for dashboard screens after user unlocks the wallet.
+
 ### Code snippets
 
 //background listens to the port
