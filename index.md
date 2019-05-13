@@ -16,6 +16,10 @@ Currently Speckle has implemented a simple wallet. Even though it will support m
 
 As Polkdadot Keyring implementation does not expose private key, Speckle does not support raw private key backup like Metamask. It only supports mnemonic backup (before account generation) and keystore backup (after account generation).
 
+### Balance Component
+
+Speckle shows account balances by subscribing freeBalance update from Polkadot (or any Substrate) node's Websocket rpc endpoint. It unsubsribe the update once upon the address changes. This way balance keeps up-to-date.
+
 ### Code reading guide
 
 The code is organised by folders and the folder names describe what are inside them, e.g. components, services, etc.
