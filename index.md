@@ -29,7 +29,7 @@ User can import account in two ways, 12 word seed phrase and keystore file. When
 
 Speckle shows account balances by subscribing freeBalance update from Polkadot (or any Substrate) node's Websocket rpc endpoint. It unsubsribe the update once upon the address changes. This way balance keeps up-to-date.
 
-### Code reading guide
+### Code Reading Guide
 
 The code is organised by folders and the folder names describe what are inside them, e.g. components, services, etc.
 The account management service is in `/src/ts/background/services/keyring-vault.ts` file. It is responsible for mnemonic generation, account generation, keystore file generation, account persistence and account loading from storage.
@@ -38,7 +38,7 @@ The account management service is in `/src/ts/background/services/keyring-vault.
 
 `/src/ts/routes/RouteWithLayout.tsx` is a HOC (high order component) which can be used to define Routes using different Layouts. `/src/ts/layouts` contains two Layout components, `LoginLayout.tsx` is a container component which defines a common header and footer for screens before user unlocks the wallet, `DashboardLayout.tsx` is a container component which define a common header and footer for dashboard screens after user unlocks the wallet.
 
-### Code snippets
+### Code Snippets
 
 //background listens to the port
 ```
