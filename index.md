@@ -21,7 +21,7 @@ User can import account in two ways, 12 word seed phrase and keystore file. When
 ### Security Mechanism
 
 * Extension storage instead of local storage is used to persist encrypted accounts.
-* Password is enforced to be at least characters
+* Password is enforced to be at least 8 characters
 * Account imported from un-encrypted keystore will be encrypted using user's password before persisting into storage
 * No passowrd or mnemonic is persisted anywhere.
 
