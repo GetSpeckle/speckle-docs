@@ -18,7 +18,7 @@ As Polkdadot Keyring implementation does not expose private key, Speckle does no
 
 User can import account in two ways, 12 word seed phrase and keystore file. When importing account by keystore file, the password has to be supplied to decrypt it. Both ed25519 and sr25519 accounts are supported. The accounts generated in Polkadot PoC-2 and before can also be imported.
 
-### Security mechanism
+### Security Mechanism
 
 * Extension storage instead of local storage is used to persist encrypted accounts.
 * Password is enforced to be at least characters
