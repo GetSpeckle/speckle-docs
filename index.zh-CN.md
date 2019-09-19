@@ -34,11 +34,11 @@ Speckle通过订阅来自Polkadot(或任何Substrate)节点的Websocket rpc端�
 ### 代码阅读指南
 
 代码按文件夹组织，文件夹名称描述其中的内容，例如组件，服务等
-帐户管理服务位于`/ src / ts / background / services / keyring-vault.ts`文件中。它负责助记符生成，帐户生成，密钥库文件生成，帐户持久性和存储中的帐户加载。
+帐户管理服务位于`/src/ts/background/services/keyring-vault.ts`文件中。它负责助记符生成，帐户生成，密钥库文件生成，帐户持久性和存储中的帐户加载。
 
-`src / ts / services / keyring-vault-proxy.ts`是`keyring-vault.ts`的服务代理，用于隐藏前端的消息传递复杂性。
+`src/ts/services/keyring-vault-proxy.ts`是`keyring-vault.ts`的服务代理，用于隐藏前端的消息传递复杂性。
 
-`/ src / ts / routes / RouteWithLayout.tsx`是一个HOC(高阶组件)，可用于定义使用不同布局的路由。 `/ src / ts / layouts`包含两个Layout组件，`LoginLayout.tsx`是一个容器组件，它在用户解锁钱包之前为屏幕定义一个公共页眉和页脚，`DashboardLayout.tsx`是一个定义公共内容的容器组件。用户解锁钱包后，仪表板屏幕的页眉和页脚。
+`/src/ts/routes/RouteWithLayout.tsx`是一个HOC(高阶组件)，可用于定义使用不同布局的路由。 `/src/ts/layouts`包含两个Layout组件，`LoginLayout.tsx`是一个容器组件，它在用户解锁钱包之前为屏幕定义一个公共页眉和页脚，`DashboardLayout.tsx`是一个定义公共内容的容器组件。用户解锁钱包后，仪表板屏幕的页眉和页脚。
 
 ### 代码片段
 
