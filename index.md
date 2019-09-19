@@ -1,10 +1,12 @@
 # Speckle Development Document
 
+[中文](index.zh-CN.md)
+
 ### Overview
 
 Speckle browser extension works on Chrome, Brave and Firefox. It uses ‘Web-Extension Polyfill for TypeScript’ (webextension-polyfill-ts) to abstract extension API calls for different browsers.
 
-As a normal browser extension, it is made of different, but cohesive components. They include background scripts, a popup page, an options page, UI elements and various logic files. At the moment, the most logic of Speckle browser extension exists in the popup page that interacts with the background script. Browser local storage is also used to store necessary settings and encrypted keystore.
+As a normal browser extension, it is made of different, but cohesive components. They include background scripts, a popup page, an options page, UI elements and various logic files. At the moment, the most logic of Speckle browser extension exists in the popup page that interacts with the background script. Browser extension storage is also used to store necessary settings and encrypted keystore.
 
 <p align='center'><img src='Dataflow.jpg'></p>
 
@@ -23,7 +25,7 @@ User can import account in two ways, 12 word seed phrase and keystore file. When
 * Extension storage instead of local storage is used to persist encrypted accounts.
 * Password is enforced to be at least 8 characters
 * Account imported from un-encrypted keystore will be encrypted using user's password before persisting into storage
-* No passowrd or mnemonic is persisted anywhere.
+* No password or mnemonic is persisted anywhere.
 
 ### Balance Component
 
@@ -53,7 +55,7 @@ browser.runtime.onConnect.addListener(function (port) {
 ...        
 ```
 
-//popup service trigger message event
+//popup page send message to background and listen to response
 ```
 const port = browser.runtime.connect(undefined, { name: '__SPECKLE__' })
 
