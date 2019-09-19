@@ -76,7 +76,7 @@ export function lockWallet()：Promise <boolean> {
 //组件调用服务
 ```
   handleLockClick =()=> {
-    lockWallet()。then(result => {
+    lockWallet().then(result => {
        console.log(result)
     })
   }
