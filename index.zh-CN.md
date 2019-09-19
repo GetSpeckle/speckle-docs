@@ -29,7 +29,7 @@ Speckle依靠Polkadot Keyring实现帐户生成，并使用浏览器扩展存储
 
 ### 余额组建
 
-Speckle通过订阅来自Polkadot(或任何Substrate)节点的Websocket rpc端点的freeBalance更新来显示帐户余额。一旦地址发生变化，它就会取消更新。这种方式余额回自动更新。
+Speckle通过订阅来自Polkadot(或任何Substrate)节点的Websocket rpc端点的freeBalance更新来显示帐户余额。一旦地址发生变化，它就会取消更新。这种方式余额会自动更新。
 
 ### 代码阅读指南
 
